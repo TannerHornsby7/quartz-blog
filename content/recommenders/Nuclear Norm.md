@@ -1,0 +1,1 @@
+This [[Matrix Norm]] is the sum of the singular values of the matrix.
