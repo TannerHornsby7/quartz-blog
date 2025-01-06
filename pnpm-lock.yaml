@@ -9,13 +9,13 @@ importers:
   .:
     dependencies:
       '@clack/prompts':
-        specifier: ^0.8.2
-        version: 0.8.2
+        specifier: ^0.9.0
+        version: 0.9.0
       '@floating-ui/dom':
         specifier: ^1.6.12
         version: 1.6.12
       '@myriaddreamin/rehype-typst':
-        specifier: ^0.5.0-rc9
+        specifier: ^0.5.4
         version: 0.5.4
       '@napi-rs/simple-git':
         specifier: 0.1.19
@@ -27,10 +27,10 @@ importers:
         specifier: ^0.5.0
         version: 0.5.0
       chalk:
-        specifier: ^5.3.0
+        specifier: ^5.4.1
         version: 5.4.1
       chokidar:
-        specifier: ^4.0.2
+        specifier: ^4.0.3
         version: 4.0.3
       cli-spinner:
         specifier: ^0.2.10
@@ -72,7 +72,7 @@ importers:
         specifier: ^1.28.2
         version: 1.28.2
       mdast-util-find-and-replace:
-        specifier: ^3.0.1
+        specifier: ^3.0.2
         version: 3.0.2
       mdast-util-to-hast:
         specifier: ^13.2.0
@@ -87,10 +87,10 @@ importers:
         specifier: ^0.4.5
         version: 0.4.5
       pixi.js:
-        specifier: ^8.6.5
+        specifier: ^8.6.6
         version: 8.6.6
       preact:
-        specifier: ^10.25.2
+        specifier: ^10.25.4
         version: 10.25.4
       preact-render-to-string:
         specifier: ^6.5.12
@@ -156,8 +156,8 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
       satori:
-        specifier: ^0.12.0
-        version: 0.12.0
+        specifier: ^0.12.1
+        version: 0.12.1
       serve-handler:
         specifier: ^6.1.6
         version: 6.1.6
@@ -165,7 +165,7 @@ importers:
         specifier: ^0.33.5
         version: 0.33.5
       shiki:
-        specifier: ^1.24.2
+        specifier: ^1.26.1
         version: 1.26.1
       source-map-support:
         specifier: ^0.5.21
@@ -208,7 +208,7 @@ importers:
         specifier: ^4.0.9
         version: 4.0.9
       '@types/node':
-        specifier: ^22.10.2
+        specifier: ^22.10.5
         version: 22.10.5
       '@types/pretty-time':
         specifier: ^1.1.5
@@ -223,7 +223,7 @@ importers:
         specifier: ^17.0.33
         version: 17.0.33
       esbuild:
-        specifier: ^0.24.0
+        specifier: ^0.24.2
         version: 0.24.2
       prettier:
         specifier: ^3.4.2
@@ -297,11 +297,11 @@ packages:
     peerDependencies:
       '@citation-js/core': ^0.7.0
 
-  '@clack/core@0.3.5':
-    resolution: {integrity: sha512-5cfhQNH+1VQ2xLQlmzXMqUoiaH0lRBq9/CLW9lTyMbuKLC3+xEK01tHVvyut++mLOn5urSHmkm6I0Lg9MaJSTQ==}
+  '@clack/core@0.4.0':
+    resolution: {integrity: sha512-YJCYBsyJfNDaTbvDUVSJ3SgSuPrcujarRgkJ5NLjexDZKvaOiVVJvAQYx8lIgG0qRT8ff0fPgqyBCVivanIZ+A==}
 
-  '@clack/prompts@0.8.2':
-    resolution: {integrity: sha512-6b9Ab2UiZwJYA9iMyboYyW9yJvAO9V753ZhS+DHKEjZRKAxPPOb7MXXu84lsPFG+vZt6FRFniZ8rXi+zCIw4yQ==}
+  '@clack/prompts@0.9.0':
+    resolution: {integrity: sha512-nGsytiExgUr4FL0pR/LeqxA28nz3E0cW7eLTSh3Iod9TGrbBt8Y7BHbV3mmkNC4G0evdYyQ3ZsbiBkk7ektArA==}
 
   '@emnapi/runtime@1.3.1':
     resolution: {integrity: sha512-kEBmG8KyqtxJZv+ygbEim+KCGtIq1fC22Ms3S4ziXmYKm8uyoLX0MHONVKwp+9opg390VaKRNt4a7A9NwmpNhw==}
@@ -2657,8 +2657,8 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
-  satori@0.12.0:
-    resolution: {integrity: sha512-e0e+qQyeFwEszujN7SpWpRtZgww7Nh8lSO3bUn2spHZ5JpqEl3zJ3P14/JlWruxEwdgREs35ZnavrPrWaRVFDg==}
+  satori@0.12.1:
+    resolution: {integrity: sha512-0SbjchvDrDbeXeQgxWVtSWxww7qcFgk3DtSE2/blHOSlLsSHwIqO2fCrtVa/EudJ7Eqno8A33QNx56rUyGbLuw==}
     engines: {node: '>=16'}
 
   saxes@6.0.0:
@@ -3075,14 +3075,14 @@ snapshots:
       '@citation-js/date': 0.5.1
       citeproc: 2.4.63
 
-  '@clack/core@0.3.5':
+  '@clack/core@0.4.0':
     dependencies:
       picocolors: 1.1.1
       sisteransi: 1.0.5
 
-  '@clack/prompts@0.8.2':
+  '@clack/prompts@0.9.0':
     dependencies:
-      '@clack/core': 0.3.5
+      '@clack/core': 0.4.0
       picocolors: 1.1.1
       sisteransi: 1.0.5
 
@@ -5663,7 +5663,7 @@ snapshots:
     optionalDependencies:
       '@parcel/watcher': 2.5.0
 
-  satori@0.12.0:
+  satori@0.12.1:
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
       css-background-parser: 0.1.0
