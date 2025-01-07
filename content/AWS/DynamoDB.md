@@ -1,5 +1,5 @@
 ---
-docs: https://docs.aws.amazon.com/pdfs/cognito/latest/developerguide/cognito-dg.pdf#cognito-user-pools
+docs: https://docs.aws.amazon.com/pdfs/amazondynamodb/latest/developerguide/dynamodb-dg.pdf
 ---
 ## Vocab
 - Words
