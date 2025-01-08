@@ -22,18 +22,16 @@ Example:
 ```python
 # Jagged Tensor
 
-keys = ["user_features", "item_features"]
-# Lengths of interactions:
-# - User features: 2 users, with 2 and 3 interactions respectively
-# - Item features: 2 items, with 1 and 2 interactions respectively
-lengths = [2, 3, 1, 2]
-values = torch.Tensor([11, 12, 21, 22, 23, 101, 102, 201])
-# Create a KeyedJaggedTensor
-kjt = KeyedJaggedTensor(keys=keys, lengths=lengths, values=values)
-# Access the features by key
-print(kjt["user_features"])
-# Outputs user features
-print(kjt["item_features"])
+# User interactions:
+# - User 1 interacted with 2 items
+# - User 2 interacted with 3 items
+# - User 3 interacted with 1 item
+lengths = [2, 3, 1]
+offsets = [0, 2, 5]  # Starting index of each user's interactions
+values = torch.Tensor([101, 102, 201, 202, 203, 301])  # Item IDs interacted with
+jt = JaggedTensor(lengths=lengths, values=values)
+# OR
+jt = JaggedTensor(offsets=offsets, values=values)
 
 # Keyed Jagged Tensor
 
