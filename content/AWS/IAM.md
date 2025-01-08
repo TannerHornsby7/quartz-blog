@@ -10,7 +10,7 @@ docs: https://docs.aws.amazon.com/pdfs/IAM/latest/UserGuide/iam-ug.pdf
 
 ## General Notes
 
-### Access Control
+### STS
 
 ### Design Patterns
 

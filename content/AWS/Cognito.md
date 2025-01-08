@@ -13,7 +13,25 @@ docs: https://docs.aws.amazon.com/pdfs/cognito/latest/developerguide/cognito-dg.
 
 ### High-level Authentication flow
 
-sign up by sending a request to create a new entry in ya user pool. If the pool is an identity provider for ya identity pool then making this user automagically creates an entry in the identify pool as well. We can then build & attach Authenticated and guest access[[IAM | roles ]]which act as credentials for users who are authenticated by an identity provider or anonymous respectively. Then a user can use their tokens from their identity providers to get permission roles tokens from STS and make requests with permissions based on their identity.
+Users sign up by creating an entry in the AWS Cognito User Pool. If the User Pool is configured as an identity provider for the Cognito Identity Pool, creating a user in the User Pool automatically provisions an entry in the Identity Pool. Authenticated and guest [[IAM]] roles are defined and attached to the Identity Pool, providing credentials for users authenticated via an identity provider or anonymous users. Users can give the tokens from their identity providers to our identity pool to obtain temporary security credentials from AWS[[IAM#STS| STS]], allowing them to make requests with permissions based on their assigned roles.
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant UP as Cognito User Pool
+    participant IP as Cognito Identity Pool
+    participant IDP as Identity Provider
+    participant STS as AWS STS
+    participant R as AWS Resources
+
+    U->>UP: Sign up
+    UP->>IP: Provision user (if identity provider)
+    U->>IDP: Obtain tokens
+    U->>IP: Exchange tokens for creds
+    IP->>STS: Obtain temporary creds
+    STS->>IP: Provide creds
+    U->>R: Make requests using creds
+```
+
 ### Pricing *(first 10,000 MAU free)*
 - Essentials(Default): $0.015 / MAU
 - Lite: $0.0055 - $0.0025 depending on MAU
