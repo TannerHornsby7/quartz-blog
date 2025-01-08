@@ -11,9 +11,9 @@ Torchrec optimizes pytorch for use on large-scale recommendation tasks. It lever
 
 ## Main Components
 In the end to end training loop there are 3 main components:
-1. Planner: Takes in the configuration of environment and embedding tables and determines the optimal sharding strategy.
-2. Sharder: Shards the model using the optimal sharding strategy derived by the planner
-3. DistributedModelParallel: Provides an entry point to training the model in a distributed manner combining sharder & optimizer. ![[Pasted image 20250107140206.png]]
+1. **Planner**: Takes in the configuration of environment and embedding tables and determines the optimal sharding strategy.
+2. **Sharder**: Shards the model using the optimal sharding strategy derived by the planner
+3. **DistributedModelParallel**: Provides an entry point to training the model in a distributed manner combining sharder & optimizer. ![[Pasted image 20250107140206.png]]
 *Figure 2: Workflow*
 ## Data Types
 1. **Jagged Tensor**: Special type of tensor for representing sparse matrices. Normal Tensor entries must all have the same dimensionality, but Jagged entries don't have to, instead we store values in a 1D array and then provide an array of offsets or lengths to split that array into groups. 
