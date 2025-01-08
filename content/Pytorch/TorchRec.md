@@ -19,7 +19,7 @@ In the end to end training loop there are 3 main components:
 1. **Jagged Tensor**: Special type of tensor for representing sparse matrices. Normal Tensor entries must all have the same dimensionality, but Jagged entries don't have to, instead we store values in a 1D array and then provide an array of offsets or lengths to split that array into groups. 
 2. **Keyed Jagged Tensor**: uses an array of keys to label the partition created by lengths/offsets
 Example:
-```[python]
+```python
 # Jagged Tensor
 
 keys = ["user_features", "item_features"]
