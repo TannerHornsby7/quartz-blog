@@ -1,6 +1,8 @@
 ---
 paper: https://arxiv.org/pdf/2105.00335
 date: 05-01-2021
+tags:
+  - audio
 ---
 ## Notable References
 
