@@ -4,28 +4,17 @@ docs: https://docs.aws.amazon.com/pdfs/cognito/latest/developerguide/cognito-dg.
 ## Vocab
 - **User Pool**: User directory for managing user-identity mapping.
 ![[Pasted image 20250107235737.png]]
-- **Identity Pool**: Identity directory for manageing identity-permissions mapping.
+- **Identity Pool**: Identity directory for managing identity-permissions mapping.
 ![[Pasted image 20250108000711.png]]
 - **STS**: Security Token Service allows users to request temporary limited-access credentials to users.
 
 ---
-## General Notes
 
 ## Design Details
-Authorization is done in two ways: 1. client passes tokens to backend which perform custom logic to allow or deny actions or 2. clients sign requests and backend validates signature, allowing or denying actions depending on predefined policy.
+We can authenticate a user through any OIDC provider. Said providers give us a signed JWT certifying the users identity. But how do you manage what actions this identity can perform? You could roll your own backend logic/middleware for determining this or you could use Cognito's identity pool to map identities to corresponding IAM roles with granular policies for when the identity is authenticated or when they are not. We can specify unique roles for authenticated or unauthenticated identities as Identity Pools build unique identifiers and AWS credentials for users who don't authenticate by default. Every identity is either authenticated or unauthenticated, and we attach an IAM Policy to each type. 
 
-usernames are immutable, so if you want users to be able to change them, add a preferred username field. We typically assign an email or phone number as the "username" field, and then use text to specify the preferred username. You can't login with a preferred username unless directly specified using the CDK.
+### Identity Pool Authentication Flow
 
-### High-level Authentication Flows
-1. **Token-Based Flow**:
-• JWTs from an Identity Provider (e.g., Cognito User Pools) authenticate users.
-• Backend verifies JWT validity and applies custom authorization logic.
-• Ideal for non-AWS-specific backends or APIs needing custom logic.
-2. **IAM-Based Flow**:
-• Cognito Identity Pools federate identities by validating JWTs from providers (e.g., Cognito User Pools, OIDC, etc.).
-• Identity Pools map users to IAM roles based on status (authenticated/guest) and issue temporary credentials via STS.
-• Users sign requests with these credentials (using SigV4), and AWS automatically verifies the signature and role-based permissions via IAM.
-• Best for direct, secure access to AWS resources (e.g., S3, DynamoDB).
 ```mermaid
 sequenceDiagram
     participant U as User
@@ -108,4 +97,5 @@ loginWith: {
 
 ---
 ## References
-(1) [Amplify's cognito wrapper](https://github.com/aws-amplify/amplify-js/tree/main/packages/auth/src/providers/cognito)
+(1) [Amplfy Auth Documentaiton](https://docs.amplify.aws/react/build-a-backend/auth/)
+(2) [Amplify's cognito wrapper](https://github.com/aws-amplify/amplify-js/tree/main/packages/auth/src/providers/cognito)
