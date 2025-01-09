@@ -16,6 +16,7 @@ export async function getSatoriFont(headerFontName: string, bodyFontName: string
 
   // Fetch fonts
   const headerFont = await fetchTtf(headerFontName, headerWeight)
+  debugger
   const bodyFont = await fetchTtf(bodyFontName, bodyWeight)
 
   // Convert fonts to satori font format and return

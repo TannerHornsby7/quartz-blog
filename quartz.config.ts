@@ -14,13 +14,18 @@ const config: QuartzConfig = {
     baseUrl: "tannerhornsby.com",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
-    generateSocialImages: false,
+    generateSocialImages: {
+      colorScheme: "lightMode",
+      width: 1200,
+      height: 630,
+      excludeRoot: false,
+    },
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
         header: "Schibsted Grotesk",
-        body: "geistSans",
+        body: "Geist",
         code: "IBM Plex Mono",
       },
       colors: {
@@ -46,7 +51,7 @@ const config: QuartzConfig = {
           highlight: "rgba(143, 159, 169, 0.15)",
           textHighlight: "#b3aa0288",
         },
-      }
+      },
     },
   },
   plugins: {
